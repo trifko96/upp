@@ -1,0 +1,13 @@
+delete from scientific_area;
+insert into scientific_area (id, name) values (26, 'Radiology');
+insert into scientific_area (id, name) values (13, 'Biology');
+insert into scientific_area (id, name) values (30, 'Computer Science');
+insert into scientific_area (id, name) values (50, 'Automotive engineering');
+delete from user;
+insert into user (id, name, surname, city, country, username, password, mail, title, rev_flag, active, type) values (2158, 'Admin', 'Admin', 'Nis', 'Srbija', 'admin','0e138a7406b6583942db7e3fea19a349e9ac607bf008a0cfdc30c5f675d56b5d',  'admin@gmail.com','mr', false,true, 'admin');
+insert into user (id, name, surname, city, country, username, password, mail, title, rev_flag, active, type) values (563, 'Ana', 'Antic', 'Nis', 'Srbija', 'editor1','0e138a7406b6583942db7e3fea19a349e9ac607bf008a0cfdc30c5f675d56b5d',  'editor1@gmail.com','mr', false,true, 'editor');
+insert into user (id, name, surname, city, country, username, password, mail, title, rev_flag, active, type) values (889, 'Pera', 'Mitic', 'Nis', 'Srbija', 'reviewer1','0e138a7406b6583942db7e3fea19a349e9ac607bf008a0cfdc30c5f675d56b5d',  'rev1@gmail.com','mr', false,true, 'reviewer');
+insert into user (id, name, surname, city, country, username, password, mail, title, rev_flag, active, type) values (5215, 'Olja', 'Vesic', 'Nis', 'Srbija', 'editor2','0e138a7406b6583942db7e3fea19a349e9ac607bf008a0cfdc30c5f675d56b5d',  'editor2@gmail.com','mr', false,true, 'editor');
+insert into user (id, name, surname, city, country, username, password, mail, title, rev_flag, active, type) values (4566, 'Aca', 'Nikolic', 'Nis', 'Srbija', 'reviwer2','0e138a7406b6583942db7e3fea19a349e9ac607bf008a0cfdc30c5f675d56b5d',  'rev2@gmail.com','mr', false,true, 'reviewer');
+insert into user (id, name, surname, city, country, username, password, mail, title, rev_flag, active, type) values (7005, 'Dejan', 'Lazic', 'Nis', 'Srbija', 'editor3','0e138a7406b6583942db7e3fea19a349e9ac607bf008a0cfdc30c5f675d56b5d',  'editor3@gmail.com','mr', false,true, 'editor');
+insert into user (id, name, surname, city, country, username, password, mail, title, rev_flag, active, type) values (85656, 'Jeca', 'Nesic', 'Nis', 'Srbija', 'reviewer3','0e138a7406b6583942db7e3fea19a349e9ac607bf008a0cfdc30c5f675d56b5d',  'rev3@gmail.com','mr', false,true, 'reviewer');

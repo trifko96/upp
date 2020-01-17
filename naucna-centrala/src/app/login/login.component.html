@@ -1,0 +1,40 @@
+<div class="container pt-5">
+    <div class="row d-flex justify-content-center">
+      <aside class="col-sm-4">
+        <div class="card">
+        <article class="card-body">
+          <div class="row">
+            <div class="col-md-6">
+                <h4 class="card-title text-left mb-4 mt-1">Log in:</h4>
+            </div>
+            <div>
+                <a href="http://localhost:4200/signup" style="position:absolute; right:15px; top:30px"> Registracija </a>    
+            </div>
+          </div>
+          <hr>
+          <form>
+          <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+             </div>
+            <input name="" class="form-control" placeholder="Username" type="text" id="emailValue" [(ngModel)] = "user.username" [ngModelOptions] = "{standalone:true}">
+          </div> 
+          </div>
+          <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+             </div>
+              <input class="form-control" placeholder="******" type="password" id="passValue" [(ngModel)] = "user.password" [ngModelOptions] = "{standalone:true}">
+          </div> 
+          </div> 
+          <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block" (click)="login()"> Log in  </button>
+          </div> 
+          </form>
+        </article>
+        </div>  
+      </aside>
+    </div>
+  </div>
