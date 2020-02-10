@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-md-12">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f.value, f)" ngNativeValidate>
+
+    <div class="form-group" *ngFor="let field of formFields" >
+      
+      <label for={{field.id}}>{{field.label}}</label>
+
+      <input class="form-control" type="text" name={{field.id}} ngModel  *ngIf="field.type.name=='string' && field.id != 'pdf'" >
+      <input type="checkbox" name={{field.id}} ngModel  *ngIf="field.type.name=='boolean'">
+      <input class="form-control" type="number" name={{field.id}} ngModel  *ngIf="field.type.name=='long'">
+
+      <!--
+      <select name="{{field.id}}"  multiple ngModel *ngIf="field.type.name=='enum' ">
+        <option *ngFor="let category of naucneOblasti" value={{category.id}}>
+          {{category.nazivNO}}
+        </option>
+      </select>
+      -->
+      <select class="form-control" name="{{field.id}}"  multiple ngModel *ngIf="field.type.name=='enum' ">
+        <option *ngFor="let val of enumValues" value={{val}}>
+          {{field.type.values[val]}}
+        </option>
+      </select>
+      <input  type="file" accept="application/pdf" *ngIf="field.properties.type == 'file'" (change)="fileChoserListener($event.target.files, field)">
+
+
+
+    </div>
+
+
+    <input type="submit">
+  </form>
+</div>
+
+</div>

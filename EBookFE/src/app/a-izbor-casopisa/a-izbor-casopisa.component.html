@@ -1,0 +1,33 @@
+<br><br>
+<div class="center">
+<div class="row">
+  <h3 class="text-left pl-3 pb-2">Izaberite casopis:</h3>
+</div>
+<div class="row">
+    <div class="col-md-12">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f.value, f)" ngNativeValidate>
+      <div class="form-group" *ngFor="let field of formFields" >
+          <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+        <label class="col-4" for={{field.id}}>{{field.label}}</label>
+        <input class="form-control" type="text" name={{field.id}} ngModel  *ngIf="field.type.name=='string'" >
+        <input type="checkbox" name={{field.id}} ngModel  *ngIf="field.type.name=='boolean'">
+        <input class="form-control" type="number" name={{field.id}} ngModel  *ngIf="field.type.name=='long'">
+
+        <select class="form-control" name="{{field.id}}"  multiple ngModel *ngIf="field.type.name=='enum' ">
+          <option *ngFor="let val of enumValues" value={{val}}>
+            {{field.type.values[val]}}
+          </option>
+        </select>
+
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-5"></div>
+          <div class="col-md-6">
+            <input type="submit">    
+          </div>
+      </div>
+    </form>
+    </div>
+</div>
+</div>

@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col-12">
+  <h3>Izbor recenzenata</h3>
+</div>
+</div>
+<div class="row">
+  
+  <div class="col-12">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f.value, f)" ngNativeValidate>
+      <div class="form-group" *ngFor="let field of formFields" >
+        <label for={{field.id}}>{{field.label}}</label>
+
+        <div *ngIf="field.type.name == 'string'">
+          <h6>
+            <p>Iskoristite neku od ponudjenih vrednosti: </p>
+            PT3M = 3 minuta
+            <br/>
+            PT5M = 5 minuta
+            <br/>
+            PT10M = 10 minuta
+          </h6>
+        </div>
+
+        <input class="form-control" type="text" name={{field.id}} ngModel  *ngIf="field.type.name=='string'" >
+        <input type="checkbox" name={{field.id}} ngModel  *ngIf="field.type.name=='boolean'">
+        <input class="form-control" type="number" name={{field.id}} ngModel  *ngIf="field.type.name=='long'">
+
+
+        <select class="form-control" name="{{field.id}}"  multiple ngModel *ngIf="field.type.name=='enum' && field.id == 'recenzentiL' ">
+          <option *ngFor="let val of enumValues" value={{val}}>
+            {{field.type.values[val]}}
+          </option>
+        </select>
+
+
+      </div>
+      <br>
+      <div>
+        <button type = "submit" (click)="filtriraj()"> Filtriraj </button>
+        &nbsp;
+        <input type="submit">
+      </div>
+
+    </form>
+  </div>
+
+  <div fxLex="25%">
+  </div>
+</div>

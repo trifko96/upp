@@ -1,0 +1,28 @@
+<div class="midDiv">
+  <div fxLex="50%">
+    <form [formGroup]="loginForm" (ngSubmit)= "login(loginForm)">
+        <h2> Prijavi se</h2>
+        <br>
+        <input placeholder="Unesite korisnicko ime..."  formControlName="username">
+
+      <br>
+        <br>
+        <input type="password" placeholder="Unesite lozinku..." formControlName="password">
+      <div class="midDiv">
+        <br>
+        <button class="btn btn-link" type="submit" color="primary">Potvrdi</button>
+      </div>
+    </form>
+    <br>
+    <div>Ukoliko nemate nalog
+
+      <button class="btn btn-link" type="submit" color="primary" (click)="registrujSe()">Registruj se
+      </button>
+    </div>
+
+
+  </div>
+  <div fxLex="25%">
+  </div>
+</div>
+

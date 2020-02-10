@@ -1,0 +1,10 @@
+<br><br><br>
+<div class="center">
+  <h3>Taskovi:</h3>
+  <table>
+    <tr *ngFor="let task of tasks" > <td>{{task.title}}</td><td>{{task.assignee}}</td>
+      <td><button  class = "btn btn-link" (click)="complete(task)">Zapocnite Task</button></td>
+    </tr>
+
+  </table>
+</div>
